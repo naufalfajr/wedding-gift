@@ -109,6 +109,18 @@ body::before {
     border: 1px solid #e8dfd3;
 }
 
+/* Responsive bank logo used for the Mandiri image */
+.bank-logo {
+    height: 2.2rem;
+    width: auto;
+    max-height: 56px;
+    max-width: 25%;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 12px;
+}
+
 .copy-btn {
     background-color: #8b7355;
     color: white;
