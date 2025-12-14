@@ -13,7 +13,7 @@ function copyAccountNumber() {
     // Using the modern Clipboard API
     navigator.clipboard.writeText(fullNumber)
         .then(() => {
-            copyStatus.textContent = "Account number copied to clipboard!";
+            copyStatus.textContent = "Nomor rekening berhasil disalin!";
             copyStatus.style.color = "#4CAF50";
             
             // Change button text to "Copied!" with check icon
@@ -27,11 +27,11 @@ function copyAccountNumber() {
                 copyBtn.innerHTML = '<i class="far fa-copy"></i> <span class="btn-text">Copy</span>';
                 copyBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
                 copyBtn.classList.remove('copied');
-            }, 3000);
+            }, 5000);
         })
         .catch(err => {
             console.error('Failed to copy: ', err);
-            copyStatus.textContent = "Failed to copy. Please select and copy manually.";
+            copyStatus.textContent = "Gagal menyalin. Silakan blok teks dan salin manual.";
             copyStatus.style.color = "#f44336";
         });
 }
