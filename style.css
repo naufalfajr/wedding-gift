@@ -14,14 +14,6 @@ body {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    
-    /* Flower background */
-    background-image: url('flower-background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;    
-    position: relative;
 }
 
 body::before {
@@ -340,21 +332,6 @@ body::before {
 .card-instructions i {
     color: #8b7355;
     margin-right: 10px;
-}
-
-/* For testing - temporary background pattern */
-body:not([data-bg-loaded="true"])::after {
-    content: 'Using temporary flower pattern. Add your own flower-background.jpg';
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    background: white;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 12px;
-    color: #666;
-    z-index: 1000;
-    font-family: 'Cormorant Garamond', serif;
 }
 
 @media (max-width: 600px) {
