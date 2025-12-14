@@ -1,35 +1,165 @@
-/* Basic styling for the container */
-.copy-container {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Adjust this alignment as needed */
-  padding: 10px;
-  border: 1px solid #ccc; /* Light border */
-  border-radius: 5px;
-  background-color: #f7f7f7; /* Light background */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Style the account number text */
-#accountNumber {
-  font-family: Arial, sans-serif; /* Use a web-safe font */
-  font-size: 18px;
-  font-weight: bold;
-  color: #333;
-  margin-right: 15px; /* Space between number and button */
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f8f5f2;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
-/* Style the button */
-.copy-button {
-  background-color: #008080; /* Canva's teal-like color for example */
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 15px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s; /* Smooth hover effect */
+.container {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
 }
 
-.copy-button:hover {
-  background-color: #006666; /* Darker on hover */
+.initials {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.initial-letter {
+    font-size: 120px;
+    font-weight: normal;
+    color: #8b7355;
+    line-height: 1;
+}
+
+.title {
+    font-size: 24px;
+    letter-spacing: 8px;
+    margin-bottom: 40px;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.content {
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+}
+
+.message {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #555;
+    line-height: 1.8;
+}
+
+.recipient-name {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+.account-number {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #8b7355;
+    padding: 15px;
+    background-color: #f9f7f4;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copy-btn {
+    background-color: #8b7355;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Georgia', serif;
+    transition: background-color 0.3s;
+}
+
+.copy-btn:hover {
+    background-color: #766248;
+}
+
+.copy-status {
+    font-size: 14px;
+    color: #666;
+    min-height: 20px;
+    margin-bottom: 10px;
+}
+
+.footer {
+    font-size: 14px;
+    color: #777;
+    text-align: center;
+    max-width: 600px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eae5e0;
+    line-height: 1.6;
+}
+
+.footer a {
+    color: #8b7355;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .initial-letter {
+        font-size: 80px;
+    }
+    
+    .title {
+        font-size: 20px;
+        letter-spacing: 6px;
+    }
+    
+    .account-number {
+        font-size: 22px;
+        letter-spacing: 1px;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .content {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .initial-letter {
+        font-size: 60px;
+    }
+    
+    .title {
+        font-size: 18px;
+        letter-spacing: 4px;
+    }
+    
+    .account-number {
+        font-size: 18px;
+    }
 }
