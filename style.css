@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Georgia', serif;
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
     color: #333;
     line-height: 1.6;
     min-height: 100vh;
@@ -20,9 +20,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    
-    /* Add overlay for better text readability */
+    background-attachment: fixed;    
     position: relative;
 }
 
@@ -47,16 +45,31 @@ body::before {
 .initials {
     display: flex;
     justify-content: center;
-    gap: 40px;
+    align-items: center;
+    gap: 25px;
     margin-bottom: 30px;
 }
 
 .initial-letter {
     font-size: 120px;
-    font-weight: normal;
+    font-weight: 300;
     color: #8b7355;
     line-height: 1;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Dancing Script', cursive;
+    font-weight: 600;
+}
+
+.initial-ampersand {
+    font-size: 70px;
+    font-weight: 300;
+    color: #8b7355;
+    line-height: 1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    opacity: 0.9;
+    margin-top: -15px;
 }
 
 .title {
@@ -65,15 +78,17 @@ body::before {
     margin-bottom: 40px;
     color: #333;
     text-transform: uppercase;
-    font-weight: normal;
+    font-weight: 300;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
 }
 
 .content {
     background-color: rgba(255, 255, 255, 0.95);
     padding: 40px 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
     margin-bottom: 30px;
     backdrop-filter: blur(5px);
 }
@@ -83,89 +98,248 @@ body::before {
     margin-bottom: 40px;
     color: #555;
     line-height: 1.8;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 19px;
+    letter-spacing: 0.3px;
+}
+
+/* Credit Card Styles */
+.bank-card {
+    background: linear-gradient(135deg, #1a3a8f 0%, #2a5caa 100%);
+    border-radius: 16px;
+    padding: 25px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    margin-bottom: 25px;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+}
+
+.bank-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.chip-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.chip {
+    width: 50px;
+    height: 40px;
+    background: linear-gradient(135deg, #d4af37 0%, #f7ef8a 100%);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.chip-line {
+    position: absolute;
+    background: rgba(0,0,0,0.2);
+}
+
+.chip-line:nth-child(1) {
+    top: 15px;
+    left: 0;
+    right: 0;
+    height: 2px;
+}
+
+.chip-line:nth-child(2) {
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+}
+
+.chip-line:nth-child(3) {
+    top: 8px;
+    left: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.3);
+}
+
+.chip-line:nth-child(4) {
+    bottom: 8px;
+    right: 10px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.3);
+}
+
+.contactless-icon {
+    font-size: 24px;
+    color: rgba(255,255,255,0.8);
+    transform: rotate(90deg);
+}
+
+.bank-logo-container {
+    text-align: right;
+}
+
+.bank-logo {
+    height: 35px;
+    margin-bottom: 5px;
+    filter: brightness(0) invert(1);
+    display: block;
+    margin-left: auto;
+}
+
+.card-type {
+    font-size: 10px;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    font-family: 'Courier New', monospace;
+}
+
+.card-number {
+    font-size: 28px;
+    letter-spacing: 3px;
+    margin: 30px 0;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+    position: relative;
+    z-index: 1;
+}
+
+.card-number-group {
+    margin-right: 25px;
+    display: inline-block;
+}
+
+.card-number-group:last-child {
+    margin-right: 0;
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+.card-label {
+    font-size: 10px;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-family: 'Courier New', monospace;
 }
 
 .recipient-name {
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #333;
+    font-size: 18px;
+    font-weight: 600;
     letter-spacing: 1px;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
 }
 
-.account-number {
-    font-size: 28px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: #8b7355;
-    padding: 15px;
-    background-color: rgba(249, 247, 244, 0.9);
-    border-radius: 6px;
-    margin-bottom: 10px;
+.valid-date {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
     font-family: 'Courier New', monospace;
+}
+
+.card-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #e8dfd3;
+    position: relative;
+    z-index: 1;
 }
 
-/* Responsive bank logo used for the Mandiri image */
-.bank-logo {
-    height: 2.2rem;
-    width: auto;
-    max-height: 56px;
-    max-width: 25%;
-    object-fit: contain;
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 12px;
+.copy-btn-container {
+    min-width: 120px; /* Fixed width container */
+    display: flex;
+    justify-content: flex-end;
 }
 
 .copy-btn {
-    background-color: #8b7355;
+    background-color: rgba(255, 255, 255, 0.2);
     color: white;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 10px 20px;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 14px;
-    font-family: 'Georgia', serif;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
     transition: all 0.3s;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(5px);
+    width: 100%; /* Take full width of container */
+    justify-content: center; /* Center content */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.btn-text {
+    display: inline-block;
+    min-width: 40px; /* Reserve space for text */
+    text-align: center;
 }
 
 .copy-btn:hover {
-    background-color: #766248;
+    background-color: rgba(255, 255, 255, 0.3);
     transform: translateY(-2px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .copy-status {
     font-size: 14px;
     color: #666;
     min-height: 20px;
-    margin-bottom: 10px;
+    margin: 15px 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
 }
 
-.footer {
-    font-size: 14px;
-    color: #777;
-    text-align: center;
-    max-width: 600px;
-    margin-top: 30px;
-    padding: 20px;
-    border-radius: 6px;
-    background-color: rgba(255, 255, 255, 0.9);
-    line-height: 1.6;
-    backdrop-filter: blur(5px);
+.card-instructions {
+    background-color: rgba(139, 115, 85, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 15px;
+    color: #555;
+    text-align: left;
+    font-family: 'Cormorant Garamond', serif;
 }
 
-.footer a {
+.card-instructions i {
     color: #8b7355;
-    text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
+    margin-right: 10px;
 }
 
 /* For testing - temporary background pattern */
@@ -180,6 +354,7 @@ body:not([data-bg-loaded="true"])::after {
     font-size: 12px;
     color: #666;
     z-index: 1000;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 @media (max-width: 600px) {
@@ -187,20 +362,39 @@ body:not([data-bg-loaded="true"])::after {
         font-size: 80px;
     }
     
+    .initial-ampersand {
+        font-size: 50px;
+        margin-top: -10px;
+    }
+    
     .title {
         font-size: 20px;
         letter-spacing: 6px;
     }
     
-    .account-number {
-        font-size: 22px;
-        letter-spacing: 1px;
-        flex-direction: column;
-        gap: 15px;
-    }
-    
     .content {
         padding: 30px 20px;
+    }
+    
+    .message {
+        font-size: 17px;
+    }
+    
+    .bank-card {
+        padding: 20px;
+    }
+    
+    .card-number {
+        font-size: 22px;
+        letter-spacing: 2px;
+    }
+    
+    .card-number-group {
+        margin-right: 15px;
+    }
+    
+    .recipient-name {
+        font-size: 16px;
     }
     
     body {
@@ -213,12 +407,35 @@ body:not([data-bg-loaded="true"])::after {
         font-size: 60px;
     }
     
+    .initial-ampersand {
+        font-size: 40px;
+        margin-top: -8px;
+    }
+    
     .title {
         font-size: 18px;
         letter-spacing: 4px;
     }
     
-    .account-number {
+    .card-number {
         font-size: 18px;
+        letter-spacing: 1px;
+    }
+    
+    .card-number-group {
+        margin-right: 10px;
+    }
+    
+    .message {
+        font-size: 16px;
+    }
+    
+    .recipient-name {
+        font-size: 14px;
+    }
+    
+    .chip {
+        width: 40px;
+        height: 30px;
     }
 }

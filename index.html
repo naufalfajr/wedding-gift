@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D &apos; G WEDDING GIFT</title>
+    <title>D & G WEDDING GIFT</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Dancing+Script:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <div class="initials">
             <div class="initial-letter">D</div>
-            <div class="initial-letter">&apos;</div>
+            <div class="initial-ampersand">&</div>
             <div class="initial-letter">G</div>
         </div>
         
@@ -21,15 +27,53 @@
                 Bagi Bapak/Ibu/Saudara/i yang ingin mengirimkan hadiah pernikahan dapat melalui nomor rekening dibawah ini
             </p>
             
-            <div class="recipient-name">DIANA AULIA RAHMA</div>
-            
-            <div class="account-number">
-                <span id="account-number-text">1780005433632</span>
-                <img id="mandiri-logo" src="mandiri.png" alt="Mandiri Logo" class="bank-logo">
-                <button class="copy-btn" onclick="copyAccountNumber()">Copy</button>
+            <!-- Credit Card Style Account Card -->
+            <div class="bank-card">
+                <div class="card-header">
+                    <div class="chip-container">
+                        <div class="chip">
+                            <div class="chip-line"></div>
+                            <div class="chip-line"></div>
+                            <div class="chip-line"></div>
+                            <div class="chip-line"></div>
+                        </div>
+                        <div class="contactless-icon">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                    </div>
+                    <div class="bank-logo-container">
+                        <img id="mandiri-logo" src="mandiri.png" alt="Mandiri Logo" class="bank-logo">
+                    </div>
+                </div>
+                
+                <div class="card-number">
+                    <span class="card-number-group">17800</span>
+                    <span class="card-number-group">0543</span>
+                    <span class="card-number-group">3632</span>
+                </div>
+                
+                <div class="card-details">
+                    <div class="card-holder">
+                        <div class="card-label">CARD HOLDER</div>
+                        <div class="recipient-name">DIANA AULIA RAHMA</div>
+                    </div>
+                    <div class="card-footer">
+                        <!-- Add a container with fixed width for the button -->
+                        <div class="copy-btn-container">
+                            <button class="copy-btn" onclick="copyAccountNumber()">
+                                <i class="far fa-copy"></i> <span class="btn-text">Copy</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
             
             <div class="copy-status" id="copy-status"></div>
+            
+            <div class="card-instructions">
+                <p><i class="fas fa-info-circle"></i> You can copy the account number or transfer directly using the details above</p>
+            </div>
         </div>
     </div>
     

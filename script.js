@@ -1,16 +1,32 @@
 function copyAccountNumber() {
-    const accountNumber = document.getElementById('account-number-text').textContent;
+    // Get the full account number from all card number groups
+    const cardNumberGroups = document.querySelectorAll('.card-number-group');
+    let fullNumber = '';
+    cardNumberGroups.forEach(group => {
+        fullNumber += group.textContent;
+    });
+    
     const copyStatus = document.getElementById('copy-status');
+    const copyBtn = document.querySelector('.copy-btn');
+    const btnText = document.querySelector('.btn-text');
     
     // Using the modern Clipboard API
-    navigator.clipboard.writeText(accountNumber)
+    navigator.clipboard.writeText(fullNumber)
         .then(() => {
             copyStatus.textContent = "Account number copied to clipboard!";
             copyStatus.style.color = "#4CAF50";
             
-            // Reset status after 3 seconds
+            // Change button text to "Copied!" with check icon
+            copyBtn.innerHTML = '<i class="fas fa-check"></i> <span class="btn-text">Copied!</span>';
+            copyBtn.style.backgroundColor = 'rgba(76, 175, 80, 0.3)';
+            copyBtn.classList.add('copied');
+            
+            // Reset after 3 seconds
             setTimeout(() => {
                 copyStatus.textContent = "";
+                copyBtn.innerHTML = '<i class="far fa-copy"></i> <span class="btn-text">Copy</span>';
+                copyBtn.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+                copyBtn.classList.remove('copied');
             }, 3000);
         })
         .catch(err => {
